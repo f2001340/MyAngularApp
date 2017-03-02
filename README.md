@@ -1,2 +1,2 @@
 # MyAngularApp
-Web Application Built using AngularJS
+- Web Application Built using AngularJS
