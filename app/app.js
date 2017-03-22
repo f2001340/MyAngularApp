@@ -3,14 +3,14 @@ var app = angular.module("myApp", ['ngRoute']);
 app.config(function($routeProvider) {
 	$routeProvider
 	.when('/', {
-		templateUrl: "templates/main.html",
+		templateUrl: "app/main/main.html",
         controller: "mainController"
 	})
 	.when('/first', {
-		templateUrl: "templates/first.html"
+		templateUrl: "app/first/first.html"
 	})
 	.when('/second', {
-		templateUrl: "templates/second.html"
+		templateUrl: "app/second/second.html"
 	})
     .otherwise({
                 redirectTo: '/'
@@ -24,6 +24,14 @@ app.config(function($routeProvider) {
     'http://api.openweathermap.org/**'
   ]);
 }])*/
+
+app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  // We must whitelist the JSONP endpoint that we are using to show that we trust it
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://angularjs.org/**'
+  ]);
+}])
 
 app.controller("mainCtrl", ['$scope', '$log', function($scope, $log) {
     $log.debug("inside main Ctrl");

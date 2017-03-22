@@ -1,0 +1,15 @@
+<h1>Displaying Weather Details</h1>
+
+<div class="row">
+    <div class="col-sm-6">
+        <form>
+            <div class="form-group">
+                <label for="cityField">City</label>
+                <input type="text" class="form-control" id="cityField" placeholder="Enter City" ng-model="city">
+            </div>
+        </form>
+        <p>Entered city is: {{city}}</p>
+        <button type="button" class="btn btn-primary" ng-click="getWeather()">Get Weather</button>
+    </div>        
+</div>
+
